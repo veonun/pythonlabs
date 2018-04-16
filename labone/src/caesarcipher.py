@@ -26,9 +26,9 @@ def decrypt_caesar(n, encryptedtxt):
 
 f = open("one.txt", "r")
 if f.mode == 'r':
-    text = f.read().splitlines()
+    z = f.read().splitlines()
     f.close()
-    for text in text:
+    for text in z:
         print(text)
 
 offset = 1
