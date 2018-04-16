@@ -37,5 +37,5 @@ encrypted = encrypt_caesar(offset, text)
 print('Encrypted using caesar cipher :', encrypted)
 
 decrypted = decrypt_caesar(offset, encrypted)
-print('Decrypted using caser cipher:', text)
+print('Decrypted using caser cipher:', decrypted)
 
