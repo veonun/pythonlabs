@@ -1,10 +1,10 @@
 class Singleton(type):
     instance = None
 
-    def __call__(clas, *args, **kw):
-        if not clas.instance:
-            clas.instance = super(Singleton, clas).__call__(*args, **kw)
-        return clas.instance
+    def __call__(cls, *args, **kw):
+        if not cls.instance:
+            cls.instance = super(Singleton, cls).__call__(*args, **kw)
+        return cls.instance
 
 
 class SingletonObject(object):
