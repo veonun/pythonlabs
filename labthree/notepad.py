@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 from tkinter.filedialog import askopenfilename, askopenfile, asksaveasfilename, asksaveasfile
 
 omega = Tk()
@@ -30,14 +31,12 @@ def openfile():
     try:
         T.delete(1.0, END)
         name = askopenfilename(filetypes=(("Text File", "*.txt"), ("All Files", "*.*")), title="Choose a file.")
-        print(name)
         omega.title(name)
         text1 = open(name).read()
-        print(text1)
         T.insert(END, text1)
         T.lift()
-    except IOError:
-        print("File is not a text file")
+    except FileNotFoundError:
+        messagebox.showinfo("File is not a text file")
 
 
 def savefile():
@@ -45,7 +44,6 @@ def savefile():
         saved = asksaveasfile(mode='w', defaultextension='.txt',
                               filetypes=(("Text File", "*.txt"), ("All Files", "*.*")))
         omega.title(saved)
-        print(saved)
 
         if saved:
             text2 = T.get("1.0", 'end-1c')
@@ -53,7 +51,7 @@ def savefile():
             saved.close()
 
     except IOError:
-        print("Error saving file")
+        messagebox.showinfo("Error saving file")
 
 
 def _quit():
