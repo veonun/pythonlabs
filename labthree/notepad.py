@@ -34,7 +34,6 @@ def openfile():
         omega.title(name)
         text1 = open(name).read()
         T.insert(END, text1)
-        T.lift()
     except FileNotFoundError:
         messagebox.showinfo("File is not a text file")
 
